@@ -1,8 +1,6 @@
 package pl.sda.bookstore.menu;
 
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 public class MainMenu {
 
@@ -29,7 +27,7 @@ public class MainMenu {
                 System.exit(0);
                 break;
             default:
-                System.out.println("Wybrałeś nie wspieraną opcje");
+                System.out.println("Wybrałeś niewspieraną opcje");
         }
     }
 
