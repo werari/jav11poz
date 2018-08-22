@@ -27,15 +27,22 @@ class BookCollectionTest {
 
     @Test
     public void test2() {
-
-        Set<Book> bookCollection = ConcurrentHashMap.newKeySet();
+        Set<Book> bookCollection = new HashSet<>();
         BookCollection collection2 = new BookCollection(bookCollection);
 
         collection2.add("tytul, autor, typ");
         collection2.add("tytul-do-usuniecia, autor, typ");
         collection2.removeBook("tytul-do-usuniecia");
         assertEquals(1, bookCollection.size());
+    }
 
+    @Test
+    public void test3() {
+        Set<Book> bookCollection = new HashSet<>();
+        BookCollection collection2 = new BookCollection(bookCollection);
+        collection2.add("tytul, autor, typ");
+        collection2.add("tytul, autor, typ");
 
+        assertEquals(1, bookCollection.size());
     }
 }
