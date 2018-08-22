@@ -1,13 +1,9 @@
 package pl.sda.bookstore.menu;
 
 import org.junit.jupiter.api.Test;
-import pl.sda.bookstore.Book;
 import pl.sda.bookstore.BookCollection;
 
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,33 +12,44 @@ class BookCollectionTest {
     @Test
     public void test() {
         //given
-        Set<Book> bookCollection = new HashSet<>();
-        BookCollection collecion = new BookCollection(bookCollection);
+        BookCollection collecion = new BookCollection(new HashSet<>());
         //when
         collecion.add("tytul, autor, typ");
         collecion.add("tytul, autor,33.33,typ,9.0");
         //then
-        assertEquals(2, bookCollection.size());
+        assertEquals(2, collecion.collectionSize());
     }
 
     @Test
     public void test2() {
-        Set<Book> bookCollection = new HashSet<>();
-        BookCollection collection2 = new BookCollection(bookCollection);
+        BookCollection collection2 = new BookCollection(new HashSet<>());
 
         collection2.add("tytul, autor, typ");
         collection2.add("tytul-do-usuniecia, autor, typ");
         collection2.removeBook("tytul-do-usuniecia");
-        assertEquals(1, bookCollection.size());
+        assertEquals(1, collection2.collectionSize());
     }
 
     @Test
     public void test3() {
-        Set<Book> bookCollection = new HashSet<>();
-        BookCollection collection2 = new BookCollection(bookCollection);
+        BookCollection collection2 = new BookCollection(new HashSet<>());
         collection2.add("tytul, autor, typ");
         collection2.add("tytul, autor, typ");
 
-        assertEquals(1, bookCollection.size());
+        assertEquals(1, collection2.collectionSize());
+    }
+
+    @Test
+    public void test4(){
+        Set<String> set = new HashSet<>();
+        List<String> list = new ArrayList<>();
+
+        set.add("a");
+        set.add("a");
+        assertEquals(1, set.size());
+
+        list.add("a");
+        list.add("a");
+        assertEquals(2, list.size());
     }
 }

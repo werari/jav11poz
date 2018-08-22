@@ -35,4 +35,8 @@ public class BookCollection {
 
         bookCollection.remove(bookToRemove);
     }
+
+    public int collectionSize(){
+        return bookCollection.size();
+    }
 }
