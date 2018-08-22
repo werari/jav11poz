@@ -1,14 +1,14 @@
 package pl.sda.bookstore.menu;
 
 import pl.sda.bookstore.Book;
+import pl.sda.bookstore.BookCollection;
 
 import java.util.*;
 
 public class MainMenu {
 
     Scanner sc = new Scanner(System.in);
-    private Set<Book> bookCollection = new HashSet<>();
-
+    BookCollection bookCollection = new BookCollection(new HashSet<>());
 
     public void showMenu() {
         System.out.println("Wybierz menu");

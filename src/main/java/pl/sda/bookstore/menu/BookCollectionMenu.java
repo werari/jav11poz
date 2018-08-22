@@ -1,17 +1,16 @@
 package pl.sda.bookstore.menu;
 
 import pl.sda.bookstore.Book;
+import pl.sda.bookstore.BookCollection;
 
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 public class BookCollectionMenu {
 
     private final Scanner sc;
-    private final Set<Book>bookCollection;
+    private final BookCollection bookCollection;
 
-    BookCollectionMenu(Scanner sc, Set<Book> bookCollection){
+    BookCollectionMenu(Scanner sc, BookCollection bookCollection){
         this.sc = sc;
         this.bookCollection = bookCollection;
     }
@@ -26,30 +25,21 @@ public class BookCollectionMenu {
             case 1:
                 sc.nextLine();
                 String dataFromUser = sc.nextLine();
-                String[] splittedText = dataFromUser.split(",");
-                bookCollection.add(new Book(splittedText[0], splittedText[1], Double.parseDouble(splittedText[2]), splittedText[3], Double.parseDouble(splittedText[4])));
+                bookCollection.add(dataFromUser);
                 break;
             case 2:
                 sc.nextLine();
                 String dataFromUser2 = sc.nextLine();
-                String[] splittedText2 = dataFromUser2.split(",");
-                bookCollection.add(new Book(splittedText2[0], splittedText2[1], splittedText2[2]));
+                bookCollection.add(dataFromUser2);
                 break;
             case 3:
                 sc.nextLine();
-                for (Book book : bookCollection) {
-                    System.out.println(book);
-                }
+                bookCollection.showAllBooks();
             case 4:
                 sc.nextLine();
-                String titleToRemove = sc.nextLine();
-                Book bookToRemove;
-                for (Book book: bookCollection) {
-                    if(book.getTitle().equals(titleToRemove)){
-                        bookToRemove = book;
-                        bookCollection.remove(bookToRemove);
-                    }
-                }
+                bookCollection.removeBook(sc.nextLine());
+
+
         }
     }
 }
