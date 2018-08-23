@@ -10,6 +10,7 @@ public class MainMenu {
     Scanner sc = new Scanner(System.in);
     BookCollection bookCollection = new BookCollection(new HashSet<>());
 
+
     public void showMenu() {
         System.out.println("Wybierz menu");
         System.out.println("1. Kolekcja książek");
@@ -24,10 +25,16 @@ public class MainMenu {
                 bookCollectionMenu.showMenu();
                 break;
             case 2:
+                BookStorageMenu bookStorageMenu = new BookStorageMenu(sc);
+                bookStorageMenu.showMenu();
                 break;
             case 3:
+                BookCurrentOrdersMenu bookCurrentOrdersMenu = new BookCurrentOrdersMenu(sc);
+                bookCurrentOrdersMenu.showMenu();
                 break;
             case 4:
+                BookNewOrderMenu bookNewOrderMenu = new BookNewOrderMenu(sc);
+                bookNewOrderMenu.showMenu();
                 break;
             case 5:
                 System.exit(0);
