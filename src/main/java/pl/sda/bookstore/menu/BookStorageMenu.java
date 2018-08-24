@@ -18,7 +18,7 @@ public class BookStorageMenu {
         while(true) {
             System.out.println("1. Zwiększ stan magazynowy książki. Podaj: tytuł, autor, ilość");
             System.out.println("2. Zmniejsz stan magazynowy książki. Podaj: tytuł, autor, ilość");
-            System.out.println("3. Wyświetl wszystkie książki ze stanem 0");
+            System.out.println("3. Pokaż stan magazynowy");
             System.out.println("4. Wyświetl wszystkie książki ze stanem poniżej 10");
             System.out.println("5. Powrót");
 

@@ -19,6 +19,9 @@ public class BookStorage {
     }
 
     public void showStorageState(){
+        System.out.println();
+        System.out.println("===========================================================================");
+        System.out.println("Stan magazynowy: ");
         for (Map.Entry<Book,Integer> book : storage.entrySet()) {
             Book key = book.getKey();
             int value = book.getValue();
