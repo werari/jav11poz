@@ -10,6 +10,10 @@ public class BookStorage {
         this.storage = storage;
     }
 
+    public void addNewBookToStorage(Book book){
+        storage.put(book, 0);
+    }
+
     public void updateBookCount(Book book, int diff) {
         storage.put(book, storage.get(book) + diff);
     }

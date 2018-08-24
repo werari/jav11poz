@@ -9,8 +9,8 @@ import java.util.*;
 public class MainMenu {
 
     Scanner sc = new Scanner(System.in);
-    BookCollection bookCollection = new BookCollection(new HashSet<>());
     BookStorage bookStorage = new BookStorage(new HashMap<>());
+    BookCollection bookCollection = new BookCollection(new HashSet<>(), bookStorage);
 
     public void showMenu() {
         System.out.println();

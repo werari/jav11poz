@@ -2,6 +2,7 @@ package pl.sda.bookstore.menu;
 
 import org.junit.jupiter.api.Test;
 import pl.sda.bookstore.BookCollection;
+import pl.sda.bookstore.BookStorage;
 
 import java.util.*;
 
@@ -12,7 +13,7 @@ class BookCollectionTest {
     @Test
     public void test() {
         //given
-        BookCollection collecion = new BookCollection(new HashSet<>());
+        BookCollection collecion = new BookCollection(new HashSet<>(), new BookStorage(new HashMap<>()));
         //when
         collecion.add("tytul, autor, typ");
         collecion.add("tytul, autor,33.33,typ,9.0");
@@ -22,7 +23,7 @@ class BookCollectionTest {
 
     @Test
     public void test2() {
-        BookCollection collection2 = new BookCollection(new HashSet<>());
+        BookCollection collection2 = new BookCollection(new HashSet<>(), new BookStorage(new HashMap<>()));
 
         collection2.add("tytul, autor, typ");
         collection2.add("tytul-do-usuniecia, autor, typ");
@@ -32,7 +33,7 @@ class BookCollectionTest {
 
     @Test
     public void test3() {
-        BookCollection collection2 = new BookCollection(new HashSet<>());
+        BookCollection collection2 = new BookCollection(new HashSet<>(), new BookStorage(new HashMap<>()));
         collection2.add("tytul, autor, typ");
         collection2.add("tytul, autor, typ");
 
