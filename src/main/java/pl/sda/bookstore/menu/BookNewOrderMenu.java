@@ -1,19 +1,29 @@
 package pl.sda.bookstore.menu;
 
+import pl.sda.bookstore.Book;
+import pl.sda.bookstore.Order;
+import pl.sda.bookstore.OrderManager;
+
 import java.util.Scanner;
 
 public class BookNewOrderMenu {
     private final Scanner sc;
+    private final BookCollectionMenu bookCollectionMenu;
+    private final OrderManager orderManager;
 
-    public BookNewOrderMenu(Scanner sc) {
+    public BookNewOrderMenu(Scanner sc, BookCollectionMenu bookCollectionMenu, OrderManager orderManager) {
         this.sc = sc;
+        this.bookCollectionMenu= bookCollectionMenu;
+        this.orderManager = orderManager;
     }
 
 
     public void showMenu() {
         System.out.println("Podaj swoje dane w formacie: imię, nazwisko, adres");
         sc.nextLine();
-//TODO tutaj należy dodać sobie jakieś inicjalizowanie zamówienia na podstawie wprowadzonych danych
+
+String customerData = sc.nextLine();
+Order order = new Order(customerData);
 
         while (true) {
         System.out.println("1. Znajdz książkę - przejdź do nowego menu");
@@ -25,29 +35,27 @@ public class BookNewOrderMenu {
         System.out.println("7. Zamów");
         System.out.println("8. Anuluj i wróć");
 
-
-        switch (sc.nextInt()) {
+int option = sc.nextInt();
+sc.nextLine();
+        switch (option) {
                 case 1:
-                    sc.nextLine();
+                    bookCollectionMenu.showMenu();
                     break;
                 case 2:
-                    sc.nextLine();
+                    String [] bookFromUser = sc.nextLine().split(",");
+                    order. addBook(new Book(bookFromUser[0], bookFromUser[1]));
                     break;
                 case 3:
-                    sc.nextLine();
                     break;
                 case 4:
-                    sc.nextLine();
                     break;
                 case 5:
-                    sc.nextLine();
                     break;
                 case 6:
-                    sc.nextLine();
                     break;
                 case 7:
-                    sc.nextLine();
-                    break;
+                    orderManager.add(order);
+                    return;
                 case 8:
                     return;
             }

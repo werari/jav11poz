@@ -13,6 +13,7 @@ public class MainMenu {
     private BookStorage bookStorage = new BookStorage(new HashMap<>());
     private BookCollection bookCollection = new BookCollection(new HashSet<>(), bookStorage);
     private OrderManager orderManager = new OrderManager();
+    private BookCollectionMenu bookCollectionMenu = new BookCollectionMenu(sc, bookCollection);
 
     public void showMenu() {
         System.out.println();
@@ -26,7 +27,6 @@ public class MainMenu {
 
         switch (sc.nextInt()) {
             case 1:
-                BookCollectionMenu bookCollectionMenu = new BookCollectionMenu(sc, bookCollection);
                 bookCollectionMenu.showMenu();
                 break;
             case 2:
@@ -38,7 +38,7 @@ public class MainMenu {
                 bookCurrentOrdersMenu.showMenu();
                 break;
             case 4:
-                BookNewOrderMenu bookNewOrderMenu = new BookNewOrderMenu(sc);
+                BookNewOrderMenu bookNewOrderMenu = new BookNewOrderMenu(sc, bookCollectionMenu, orderManager);
                 bookNewOrderMenu.showMenu();
                 break;
             case 5:
