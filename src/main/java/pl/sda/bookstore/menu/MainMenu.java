@@ -10,6 +10,7 @@ public class MainMenu {
 
     Scanner sc = new Scanner(System.in);
     BookCollection bookCollection = new BookCollection(new HashSet<>());
+    BookStorage bookStorage = new BookStorage(new HashMap<>());
 
     public void showMenu() {
         System.out.println();
@@ -27,7 +28,7 @@ public class MainMenu {
                 bookCollectionMenu.showMenu();
                 break;
             case 2:
-                BookStorageMenu bookStorageMenu = new BookStorageMenu(sc);
+                BookStorageMenu bookStorageMenu = new BookStorageMenu(sc, bookStorage);
                 bookStorageMenu.showMenu();
                 break;
             case 3:

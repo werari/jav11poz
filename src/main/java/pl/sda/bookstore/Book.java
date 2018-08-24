@@ -11,10 +11,15 @@ public class Book {
     private final String type;
     private double rating;
 
+
     public Book(String title, String author, String type) {
         this.title = title;
         this.author = author;
         this.type = type;
+    }
+
+    public Book(String title, String author) {
+        this(title, author, "UNKNOWN");
     }
 
     public Book(String title, String author, double price, String type, double rating) {
