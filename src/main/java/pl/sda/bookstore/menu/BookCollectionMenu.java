@@ -17,29 +17,33 @@ public class BookCollectionMenu {
 
     public void showMenu() {
         while (true) {
+            System.out.println();
+            System.out.println("===========================================================================");
             System.out.println("1. Dodaj ksiażkę w formacie: tytył, autor, cena, typ, ocena");
             System.out.println("2. Dodaj ksiażkę w formacie: tytył, autor, typ");
             System.out.println("3. Pokaż kolekcje ksiażek");
             System.out.println("4. Usuń ksiażkę - podaj tytuł");
             System.out.println("5. Powrót");
 
-            switch (sc.nextInt()) {
+            int option = sc.nextInt(); // pobranie inta nie powoduje przejścia do kolejnej linii
+            sc.nextLine(); // tutaj muszę przejść dalej.
+
+            switch (option) {
                 case 1:
-                    sc.nextLine();
                     String dataFromUser = sc.nextLine();
                     bookCollection.add(dataFromUser);
                     break;
                 case 2:
-                    sc.nextLine();
                     String dataFromUser2 = sc.nextLine();
                     bookCollection.add(dataFromUser2);
                     break;
                 case 3:
-                    sc.nextLine();
+                    System.out.println();
+                    System.out.println("===========================================================================");
+                    System.out.println("Kolekcja książek:");
                     bookCollection.showAllBooks();
                     break;
                 case 4:
-                    sc.nextLine();
                     bookCollection.removeBook(sc.nextLine());
                     break;
                 case 5:

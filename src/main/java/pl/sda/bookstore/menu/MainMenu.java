@@ -2,6 +2,7 @@ package pl.sda.bookstore.menu;
 
 import pl.sda.bookstore.Book;
 import pl.sda.bookstore.BookCollection;
+import pl.sda.bookstore.BookStorage;
 
 import java.util.*;
 
@@ -10,8 +11,9 @@ public class MainMenu {
     Scanner sc = new Scanner(System.in);
     BookCollection bookCollection = new BookCollection(new HashSet<>());
 
-
     public void showMenu() {
+        System.out.println();
+        System.out.println("===========================================================================");
         System.out.println("Wybierz menu");
         System.out.println("1. Kolekcja książek");
         System.out.println("2. Magazyn");
