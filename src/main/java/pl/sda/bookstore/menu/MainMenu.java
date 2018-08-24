@@ -3,14 +3,16 @@ package pl.sda.bookstore.menu;
 import pl.sda.bookstore.Book;
 import pl.sda.bookstore.BookCollection;
 import pl.sda.bookstore.BookStorage;
+import pl.sda.bookstore.OrderManager;
 
 import java.util.*;
 
 public class MainMenu {
 
-    Scanner sc = new Scanner(System.in);
-    BookStorage bookStorage = new BookStorage(new HashMap<>());
-    BookCollection bookCollection = new BookCollection(new HashSet<>(), bookStorage);
+    private Scanner sc = new Scanner(System.in);
+    private BookStorage bookStorage = new BookStorage(new HashMap<>());
+    private BookCollection bookCollection = new BookCollection(new HashSet<>(), bookStorage);
+    private OrderManager orderManager = new OrderManager();
 
     public void showMenu() {
         System.out.println();
@@ -32,7 +34,7 @@ public class MainMenu {
                 bookStorageMenu.showMenu();
                 break;
             case 3:
-                BookCurrentOrdersMenu bookCurrentOrdersMenu = new BookCurrentOrdersMenu(sc);
+                BookCurrentOrdersMenu bookCurrentOrdersMenu = new BookCurrentOrdersMenu(sc, orderManager);
                 bookCurrentOrdersMenu.showMenu();
                 break;
             case 4:

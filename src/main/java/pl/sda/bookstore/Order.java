@@ -7,9 +7,9 @@ public class Order {
 
     private final List<Book> books = new ArrayList<>();
 
-    String name;
-    String surname;
-    String address;
+    private final String name;
+    private final String surname;
+    private final String address;
 
     public Order(String user) {
         String[] split = user.split(",");
@@ -37,8 +37,6 @@ public class Order {
 
     public Double price() {
         double sum = 0;
-//        return books.get(0).getPrice();
-//        books.stream().forEach(a -> {})
         for (Book book : books) {
             sum += book.getPrice();
         }

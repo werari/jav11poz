@@ -1,4 +1,4 @@
-package pl.sda.bookstore.menu;
+package pl.sda.bookstore;
 
 import pl.sda.bookstore.Order;
 
@@ -12,10 +12,17 @@ public class OrderManager {
 
     public void add(Order order) {
         orderQueue.add(order);
-
     }
 
     public int orderCount() {
         return orderQueue.size();
+    }
+
+    public Order getNextOrder(){
+        return orderQueue.remove();
+    }
+
+    public void removeOrder(String customerDataInOrderToRemove) {
+        //TODO Dobre żeby pokazać dziedziczenie !!!
     }
 }
