@@ -3,6 +3,8 @@ package pl.sda.bookstore.menu;
 import pl.sda.bookstore.Book;
 import pl.sda.bookstore.Order;
 import pl.sda.bookstore.OrderManager;
+import pl.sda.bookstore.customer.Customer;
+import pl.sda.bookstore.customer.CustomerManager;
 
 import java.util.Scanner;
 
@@ -22,8 +24,9 @@ public class BookNewOrderMenu {
         System.out.println("Podaj swoje dane w formacie: imię, nazwisko, adres");
         sc.nextLine();
 
-String customerData = sc.nextLine();
-Order order = new Order(customerData);
+        Customer customer = CustomerManager.createCustomer(sc);
+        String customerData = sc.nextLine();
+        Order order = new Order(customer);
 
         while (true) {
         System.out.println("1. Znajdz książkę - przejdź do nowego menu");
