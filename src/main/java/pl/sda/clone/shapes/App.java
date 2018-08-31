@@ -10,6 +10,7 @@ public class App {
         System.out.println(newSquare.area());
 
         Shape circle = new Circle(10);
+        ((Circle)circle).printDiameter();
 
     }
 }
