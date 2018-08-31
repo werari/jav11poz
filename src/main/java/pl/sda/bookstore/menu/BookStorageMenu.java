@@ -49,7 +49,7 @@ public class BookStorageMenu {
                 bookStorage.sortByTitle();
                     break;
                 case 5:
-                    System.out.println("NOT SUPPORTED");
+                    bookStorage.sortByRating();
                     break;
                 case 6:
                     return;

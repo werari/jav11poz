@@ -42,4 +42,10 @@ public class BookStorage {
 bookSet.stream().sorted((book1, book2)->{
      return book1.getTitle().compareTo(book2.getTitle());}).forEach(System.out::println);
     }
+    public void sortByRating(){
+        Set<Book>bookSet = storage.keySet();
+        bookSet.stream().sorted((book1, book2)->{
+            return (-1)*Double.valueOf(book1.getRating()).compareTo(Double.valueOf(book2.getRating()));
+        }).forEach(System.out::println);
+    }
 }
