@@ -1,6 +1,8 @@
 package pl.sda.bookstore;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class BookStorage {
 
@@ -12,6 +14,12 @@ public class BookStorage {
 
     public void addNewBookToStorage(Book book){
         storage.put(book, 0);
+    }
+
+    public void addBookstoStorage(List<Book> books){
+        for (Book book:books) {
+          addNewBookToStorage(book);
+        }
     }
 
     public void updateBookCount(Book book, int diff) {
@@ -27,5 +35,11 @@ public class BookStorage {
             int value = book.getValue();
             System.out.println(key + ", " + value);
         }
+    }
+
+    public void sortByTitle() {
+        Set<Book> bookSet = storage.keySet();
+bookSet.stream().sorted((book1, book2)->{
+     return book1.getTitle().compareTo(book2.getTitle());}).forEach(System.out::println);
     }
 }
