@@ -26,8 +26,8 @@ public class BookStorageMenu {
             System.out.println("1. Zwiększ stan magazynowy książki. Podaj: tytuł, autor, ilość");
             System.out.println("2. Zmniejsz stan magazynowy książki. Podaj: tytuł, autor, ilość");
             System.out.println("3. Pokaż stan magazynowy");
-            System.out.println("4. Wyświetl wszystkie książki posrotowane alfabetycznie po tytule");
-            System.out.println("5. Wyświetl wszystkie książki posrotowane po ratingu");
+            System.out.println("4. Wyświetl wszystkie książki posortowane alfabetycznie po tytule");
+            System.out.println("5. Wyświetl wszystkie książki posortowane po ratingu");
             System.out.println("6. Powrót");
 
             int option = sc.nextInt();
