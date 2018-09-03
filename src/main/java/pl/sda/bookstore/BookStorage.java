@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class BookStorage {
+public class BookStorage implements BookDAO {
 
     private final Map<Book, Integer> storage;
 
@@ -16,9 +16,9 @@ public class BookStorage {
         storage.put(book, 0);
     }
 
-    public void addBookstoStorage(List<Book> books){
+    public void addBooksToStorage(List<Book> books) {
         for (Book book:books) {
-          addNewBookToStorage(book);
+            addNewBookToStorage(book);
         }
     }
 
@@ -47,5 +47,15 @@ bookSet.stream().sorted((book1, book2)->{
         bookSet.stream().sorted((book1, book2)->{
             return (-1)*Double.valueOf(book1.getRating()).compareTo(Double.valueOf(book2.getRating()));
         }).forEach(System.out::println);
+    }
+
+    @Override
+    public void removeBookFromStorage(Book book) {
+
+    }
+
+    @Override
+    public void updateBook(Book book) {
+
     }
 }

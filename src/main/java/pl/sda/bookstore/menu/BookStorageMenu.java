@@ -1,6 +1,7 @@
 package pl.sda.bookstore.menu;
 
 import pl.sda.bookstore.Book;
+import pl.sda.bookstore.BookDAO;
 import pl.sda.bookstore.BookStorage;
 
 import java.util.List;
@@ -8,9 +9,9 @@ import java.util.Scanner;
 
 public class BookStorageMenu {
     private final Scanner sc;
-    private final BookStorage bookStorage;
+    private final BookDAO bookStorage;
 
-    public BookStorageMenu(Scanner sc, BookStorage bookStorage) {
+    public BookStorageMenu(Scanner sc, BookDAO bookStorage) {
         this.sc = sc;
         this.bookStorage = bookStorage;
         initBooks();
@@ -18,7 +19,7 @@ public class BookStorageMenu {
 
     private void initBooks() {
         List<Book> bookList = BookManager.createBooks();
-        bookStorage.addBookstoStorage(bookList);
+        bookStorage.addBooksToStorage(bookList);
     }
 
     public void showMenu() {
